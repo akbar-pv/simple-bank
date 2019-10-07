@@ -17,12 +17,14 @@ class Database:
         self.admin_password = "1234"
 
     def save(self):
+        
         new_list = [str(user) for user in self.users]
         text = '\n'.join(new_list)
         with open("accounts.ck", "w+") as f:
             f.write(text)
 
     def read(self):
+        
         with open("accounts.ck", "r") as f:
             text = f.read()
         lines = text.splitlines()
